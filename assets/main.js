@@ -7,13 +7,46 @@ va applicato uno sconto del 40% per gli over 65.*/
 
 //chiedere all'utente nome, chilometri da percorrere ed età
 
-const userName = document.querySelector('#name').value;
-const kmUser = document.querySelector('#km').value;
-const userAge = document.querySelector('#age').value;
-const btn = document.querySelector('button');
+const btn = document.querySelector('[type=submit]');
 
-btn.addEventListener('click', () => {
-    window.location.reload();
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    let userName = document.querySelector('#name').value;
+    let kmuser = document.querySelector('#km').value;
+    let userAge = document.querySelector('#age').value;
+    console.log(userName,kmuser, userAge);
+
+const ticketPrice = kmuser * 0.21;
+
+let discountTicket;
+let finalPrice;
+
+//calcolare il prezzo in base all'età e i chilometri
+
+if (userAge === 'junior') {
+
+    discountTicket = ticketPrice * 20 / 100;
+    finalPrice =(ticketPrice - discountTicket).toFixed(2);
+    console.log(finalPrice);
+
+} else if (userAge === 'senior') {
+
+    discountTicket = ticketPrice * 40 / 100;
+    finalPrice = (ticketPrice - discountTicket).toFixed(2);
+    console.log(finalPrice);
+
+} else {
+
+    finalPrice = ticketPrice.toFixed(2);
+    console.log(finalPrice);
+
+};
+
+//stampo il risultato in pagina
+
+const userNameTicket = document.querySelector('.user_name');
+userNameTicket.textContent = userName;
+
+const userTicketPrice = document.querySelector('.ticket_price');
+userTicketPrice.textContent = finalPrice + ' €';
 })
-
-console.log(userName,kmUser,userAge);
