@@ -1,0 +1,44 @@
+body {
+    background-color: brown;
+}
+
+
+.user_info{
+    background-color: white;
+    border-radius: 0.5rem;
+    padding-bottom: 3rem;
+    padding-top: 2rem;
+}
+
+h1 {
+    color: white;
+    padding-bottom: 1rem;
+}
+
+#my_ticket {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding-bottom: 3rem;
+   padding-top: 1.5rem;
+}
+
+.text_color {
+    color:rgb(252, 46, 118);
+    font-size: bold;
+    padding-bottom: 1rem;
+}
+
+
+#name {
+    border-color:rgb(252, 46, 118); ;
+}
+
+#km {
+    border-color:rgb(252, 46, 118); ;
+}
+
+#age {
+    border-color:rgb(252, 46, 118); ;
+}
+
+
